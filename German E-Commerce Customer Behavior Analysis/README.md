@@ -350,123 +350,10 @@ Future enhancement may include:
 * collaborative filtering
 * content-based recommendation systems.
 
----
 
-# 📁 Project Structure
 
-```bash
-├── Dataset/                 # Raw dataset (not uploaded)
-├── Notebooks/               # Jupyter notebooks
-├── visuals/                 # EDA visualizations and charts
-├── README.md                # Project documentation
-└── requirements.txt         # Python dependencies
-```
 
----
 
-# 📷 Visualizations
-
-## 🖼️ Daily Orders with 7-Day Rolling Mean
-
-![Daily Orders](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-1.png)
-
----
-
-## 🖼️ Item Size Distribution
-
-![Size Distribution](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-4.jpg)
-
----
-
-## 🖼️ Orders Per State
-
-![Orders Per State](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-2.jpg)
-
----
-
-## 🖼️ User Count by State
-
-![Users By State](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-8.jpg)
-
----
-
-## 🖼️ Average Item Price by User Title
-
-![Average Price](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2218946ac4c37bb88064c7cc936f840bf7bd2cc1/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-7.jpg)
-
----
-
-## 🖼️ Monthly Registration Comparison (2015 vs 2016)
-
-![Monthly Registrations](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/c95536df476cdd89a17a192c675b5f7bbd786bfc/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-9.jpg)
-
----
-
-# 🚀 How to Run the Project
-
-## 1️⃣ Clone the Repository
-
-```bash
-git clone https://github.com/your-username/german-ecommerce-customer-analysis.git
-```
-
-## 2️⃣ Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## 3️⃣ Run the Notebook
-
-```bash
-jupyter notebook
-```
-
-Open the notebook and run all cells.
-
----
-
-# 💡 What I Learned From This Project
-
-Working on this project helped me better understand how raw transactional data can reveal real business problems and customer behavior patterns. One of the most interesting findings was discovering how strongly returns impact e-commerce operations and how customer activity changes across regions and seasons.
-
-This project also strengthened my skills in:
-
-* Cleaning and preprocessing messy real-world datasets
-* Detecting anomalies and outliers
-* Building meaningful visualizations
-* Extracting business-focused insights from data
-* Working with time-series and behavioral patterns
-
----
-
-# 📌 Project Highlights
-
-✅ Large-scale real-world e-commerce dataset
-✅ End-to-end exploratory data analysis
-✅ Advanced business insights
-✅ Time-series and trend analysis
-✅ Return behavior analytics
-✅ Customer and regional analysis
-✅ Visualization-driven storytelling
-✅ Machine learning readiness
-
----
-
-# 📚 Skills Demonstrated
-
-* Exploratory Data Analysis (EDA)
-* Data Cleaning & Preprocessing
-* Data Visualization
-* Statistical Analysis
-* Business Intelligence
-* Customer Behavior Analytics
-* Time-Series Analysis
-* Feature Engineering
-* Problem Solving
-* Insight Communication
-
----
 
 # 📄 License
 
@@ -476,6 +363,6 @@ This project is intended for educational and analytical purposes only.
 
 # 👩‍💻 Author
 
-**Alfiya Ansari**
+**Akif Delvi**
 
 If you found this project useful, feel free to ⭐ the repository.
