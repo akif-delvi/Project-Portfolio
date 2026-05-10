@@ -1,204 +1,481 @@
-# German E-Commerce Customer Behaviour Analysis
+# 🛒 German E-Commerce Customer Behavior Analysis
 
-This repository contains a comprehensive analysis of German e-commerce
-customer behaviour based on a 100,000-row dataset featuring customer
-demographics, product information, transaction details, returns, and
-temporal patterns. The goal of this project is to extract meaningful
-insights regarding customer behaviour, product performance, return
-patterns, and seasonal trends.
-
-------------------------------------------------------------------------
+> A data-driven exploratory analysis project focused on understanding customer purchasing patterns, return behavior, regional trends, and seasonal activity in the German e-commerce market.
 
 ## 📌 Project Overview
 
-This project analyzes real-world German e-commerce data to uncover
-behaviour patterns such as:
+This project explores customer behavior in the German e-commerce industry using a dataset of more than 100,000 transactions. The analysis focuses on identifying shopping patterns, return trends, regional performance, pricing behavior, and seasonal activity through exploratory data analysis and visualization.
 
--   Customer demographics and geographic distribution
--   Registration trends over multiple years
--   Return behaviour and return-rate drivers
--   Price sensitivity and pricing trends
--   Product performance patterns
--   Size distribution of clothing and footwear
--   Day-wise and month-wise order cycles
--   Delivery performance and seasonal peaks
--   Correlation patterns and modeling implications
+The goal of this project was not only to analyze the data technically, but also to extract business insights that could help improve customer experience, inventory planning, and operational decision-making.
 
-The analysis is supported with visualizations (see `/visuals/` folder).
-Five screenshots will be added to complement the findings.
+The analysis focuses on understanding how demographics, geography, pricing, product categories, and time-based factors influence customer purchasing and return patterns in the German e-commerce market.
 
-------------------------------------------------------------------------
+---
 
-## 📊 Detailed Insights
+# 📊 Business Problem
 
-Below are the full, deep-dive insights extracted from the analysis:
+E-commerce companies face several operational challenges:
 
-### **1. Customer Demographics Reveal a Mature, High-Intent Shopper Base**
+* High product return rates
+* Inefficient inventory allocation
+* Poor demand forecasting
+* Regional performance imbalance
+* Seasonal order fluctuations
+* Customer retention and segmentation difficulties
 
--   Most customers fall between **35--55 years**, forming the core
-    revenue-generating audience.
--   Younger demographics (18--25) appear less engaged, suggesting either
-    product alignment or onboarding inefficiencies.
--   Numerous age outliers suggest data-quality inconsistencies or older
-    demographic participation.
--   **Implication:** Target campaigns toward middle-aged shoppers;
-    explore UX improvements for younger demographics.
+This project aims to solve these problems using data-driven insights and exploratory analytics.
 
-------------------------------------------------------------------------
+---
 
-### **2. Geographic Distribution Mirrors Population Density but Exposes Market Gaps**
+# 🎯 Objectives
 
--   **North Rhine-Westphalia** leads with the highest user count,
-    followed by Bavaria, Lower Saxony, and Baden-Württemberg.
--   Underrepresented states (Bremen, Saarland, Mecklenburg-Vorpommern)
-    indicate market expansion opportunities.
--   **Implication:** Region-specific marketing and logistics
-    improvements could increase penetration in low-volume areas.
+The project was designed to:
 
-------------------------------------------------------------------------
+* Analyze customer demographics and purchasing behavior
+* Identify return-rate drivers
+* Discover high-performing products and regions
+* Study pricing patterns and customer sensitivity
+* Analyze seasonal and weekly order cycles
+* Explore delivery performance trends
+* Prepare the dataset for future machine learning applications
 
-### **3. Abnormal Registration Spike Points to System-Level Event**
+---
 
--   A massive spike on **17 Feb 2015** (\>30k registrations) indicates a
-    **bulk import/system migration**, not natural customer behaviour.
--   After removing this anomaly, daily registrations stabilize to
-    realistic levels (0--50 per day).
--   Summer months show stronger registration counts; November--December
-    shows a steep drop.
--   **Implication:** Outlier removal is mandatory for accurate
-    forecasting.
+# 📂 Dataset Information
 
-------------------------------------------------------------------------
+The dataset contains approximately **100,000 rows** of German e-commerce transactional data with multiple business-related attributes.
 
-### **4. Return Behaviour: Half of All Orders Are Returned**
+### Key Features Include:
 
--   Return rate is extremely high at **\~51%**, consistent with German
-    e-commerce norms.
--   **Company accounts** return the most (63%), likely due to bulk
-    evaluations or resale.
--   **Mr/Mrs** users fall near the dataset average; **Not Reported**
-    category returns the least.
--   **Implication:** Reducing returns via better size charts, improved
-    product details, or ML-based fit prediction could significantly
-    reduce costs.
+| Feature Category     | Description                                   |
+| -------------------- | --------------------------------------------- |
+| Customer Information | Age, title, registration date                 |
+| Geographic Data      | German states and regional activity           |
+| Product Details      | Item ID, size, category, price                |
+| Transaction Data     | Orders, deliveries, returns                   |
+| Time Features        | Order dates, monthly trends, weekday patterns |
 
-------------------------------------------------------------------------
+---
 
-### **5. Price Has Minimal Impact on Return Decisions**
+# 🛠️ Technologies & Libraries Used
 
--   Price and returns show only **weak correlation (\~0.14)**.
--   Low-priced items dominate the catalog, especially under €100.
--   High-priced items (\>€300) are returned less frequently due to
-    higher purchase consideration.
--   **Implication:** Return mitigation should focus on fit/expectation
-    management rather than price strategy.
+| Tool / Library   | Purpose                          |
+| ---------------- | -------------------------------- |
+| Python           | Core programming language        |
+| Pandas           | Data cleaning and manipulation   |
+| NumPy            | Numerical operations             |
+| Matplotlib       | Data visualization               |
+| Seaborn          | Statistical visualization        |
+| Jupyter Notebook | Interactive analysis environment |
 
-------------------------------------------------------------------------
+---
 
-### **6. Product Portfolio Shows Heavy Dependence on a Few SKUs**
+# 🧹 Data Cleaning & Preprocessing
 
--   A small subset of `item_id`s drives a large portion of total orders.
--   These likely represent bestsellers or recurring seasonal hits.
--   High-frequency items also contribute heavily to returns.
--   **Implication:** Optimize inventory forecasting and improve
-    product-level fit information for high-volume SKUs.
+Several preprocessing techniques were applied before analysis:
 
-------------------------------------------------------------------------
+* Handling missing and null values
+* Removing duplicate records
+* Converting date columns into datetime format
+* Detecting abnormal registration spikes
+* Filtering unrealistic outliers
+* Cleaning size and pricing inconsistencies
+* Creating new temporal features (month, weekday, year)
 
-### **7. Size Distribution Shows a Predictable Mid-Range Trend**
+---
 
--   Clothing sizes L, XL, and M dominate the dataset.
--   Footwear sizes cluster between 38--42.
--   **Implication:** Inventory allocation should favor these sizes;
-    extreme sizes need careful stock control.
+# 📈 Exploratory Data Analysis (EDA)
 
-------------------------------------------------------------------------
+The project includes detailed exploratory analysis across multiple dimensions.
 
-### **8. Time-Based Patterns Reveal Weekly Rhythm and Seasonal Peaks**
+---
 
--   **Monday** consistently shows peak order volume.
--   Weekend orders remain strong but slightly below weekday levels.
--   Summer months (**June--August**) show highest order and delivery
-    counts.
--   Drops after September indicate dataset cutoff.
--   **Implication:** Marketing pushes should leverage strong Monday
-    conversions and summer peaks.
+# 🔍 Key Insights & Findings
 
-------------------------------------------------------------------------
+## 1️⃣ Customer Demographics Analysis
 
-### **9. Delivery Performance Peaks in August 2016**
+### Observations
 
--   After cleaning null values, August leads with \~36k deliveries.
--   Near-zero deliveries post-September due to missing data.
--   **Implication:** Q4 delivery performance cannot be reliably
-    analyzed.
+* Majority of customers belong to the **35–55 age group**.
+* Younger users (18–25) show lower engagement levels.
+* Several age outliers suggest either:
 
-------------------------------------------------------------------------
+  * data-quality inconsistencies
+  * or participation from older demographics.
 
-## 📁 Project Structure
+### Business Insights
 
-    ├── Dataset/                # Source dataset (not included here)
-    ├── visuals/                # Exploratory data analysis screenshots
-    ├── Notebooks/              # Jupyter notebooks for analysis
-    ├── README.md               # Project documentation
+* Middle-aged customers form the primary revenue-driving segment.
+* Younger audiences may require:
 
+  * improved onboarding
+  * targeted marketing
+  * or product personalization.
 
-------------------------------------------------------------------------
+---
 
-## 🧠 Tools & Techniques Used
+## 2️⃣ Geographic Distribution Analysis
 
--   Python (Pandas, NumPy, Matplotlib, Seaborn)
--   Data cleaning & preprocessing
--   Exploratory data analysis
--   Time-series breakdown
--   Customer segmentation
--   Return behaviour modeling
--   Correlation and distribution analysis
+### Observations
 
-------------------------------------------------------------------------
+Top-performing states:
 
-## 📌 Next Steps
+1. North Rhine-Westphalia
+2. Bavaria
+3. Lower Saxony
+4. Baden-Württemberg
 
--   Build a machine learning model to predict returns.
--   Create customer segments using clustering.
--   Perform RFM analysis for customer value scoring.
--   Incorporate more months of delivery data for funnel completion.
+Low-engagement regions include:
 
-------------------------------------------------------------------------
+* Bremen
+* Saarland
+* Mecklenburg-Vorpommern
 
-## 📷 Visualizations 
+### Business Insights
 
-### 🖼 Screenshot 1 -- Daily Order With 7-Day Rolling Mean
+* Customer activity strongly mirrors German population density.
+* Underperforming states provide expansion opportunities.
+* Region-specific logistics and marketing campaigns can improve penetration.
 
-![Dataset Preview](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-1.png)
+---
 
-### 🖼 Screenshot 2 --Item Size Distribution
+## 3️⃣ Customer Registration Trend Analysis
 
-![Dataset Preview](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-4.jpg)
+### Major Finding
 
-### 🖼 Screenshot 3 -- Orders Per State
+A significant anomaly was discovered:
 
-![Dataset Preview](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-2.jpg)
+* On **17 February 2015**, registrations exceeded **30,000 users**.
+* This is likely caused by:
 
-### 🖼 Screenshot 4 -- User Count by State
+  * bulk customer import
+  * database migration
+  * or system-level event.
 
-![Dataset Preview](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-8.jpg)
+### After Cleaning
 
-### 🖼 Screenshot 5 -- Average Item Price by User Title
+* Daily registrations stabilize between **0–50 users/day**.
+* Summer months show stronger acquisition activity.
+* November–December registrations decline noticeably.
 
-![Dataset Preview](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2218946ac4c37bb88064c7cc936f840bf7bd2cc1/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-7.jpg)
+### Business Insights
 
-### 🖼 Screenshot 6 -- Monthly Registration - 2015 vs 2016
+* Outlier removal is essential before forecasting.
+* Seasonal acquisition strategies can improve customer growth.
 
-![Dataset Preview](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/c95536df476cdd89a17a192c675b5f7bbd786bfc/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-9.jpg)
+---
 
+## 4️⃣ Return Behavior Analysis
 
-------------------------------------------------------------------------
+### Major Findings
 
-## 📄 License
+* Overall return rate is approximately **51%**.
+* Company accounts show the highest return rates (**~63%**).
+* Individual customers (Mr/Mrs categories) remain near average.
+* Users with missing title information return the least.
 
-This project is for educational and analytical purposes only.
+### Business Insights
 
-------------------------------------------------------------------------
+High return rates indicate:
 
-**Created by: *Alfiya Ansari***
+* sizing problems
+* expectation mismatch
+* insufficient product information.
+
+### Recommended Solutions
+
+* Better size charts
+* AI-powered fit recommendation systems
+* Enhanced product descriptions
+* Improved product imagery
+
+---
+
+## 5️⃣ Price Sensitivity Analysis
+
+### Observations
+
+* Product prices show weak correlation with returns (**~0.14 correlation**).
+* Most products are priced below **€100**.
+* Expensive items (>€300) experience fewer returns.
+
+### Business Insights
+
+* Customers are not primarily returning products due to price.
+* Fit, quality perception, and product expectations matter more.
+* Premium purchases involve more deliberate buying behavior.
+
+---
+
+## 6️⃣ Product Performance Analysis
+
+### Observations
+
+* A small subset of products generates a large portion of sales.
+* Bestselling items also contribute heavily to returns.
+* Some SKUs repeatedly dominate transaction volume.
+
+### Business Insights
+
+* Inventory forecasting should prioritize high-volume SKUs.
+* Bestselling products require enhanced quality and fit optimization.
+* Return prediction systems should focus on high-frequency products.
+
+---
+
+## 7️⃣ Size Distribution Analysis
+
+### Clothing Sizes
+
+Most common clothing sizes:
+
+* L
+* XL
+* M
+
+### Footwear Sizes
+
+Most common footwear sizes range between:
+
+* 38–42
+
+### Business Insights
+
+* Inventory allocation should heavily prioritize mid-range sizes.
+* Extreme sizes should be managed carefully to avoid overstocking.
+
+---
+
+## 8️⃣ Time-Series & Seasonal Analysis
+
+### Weekly Trends
+
+* Monday records the highest order volume.
+* Weekends remain strong but slightly below weekday performance.
+
+### Monthly Trends
+
+* June–August show the highest transaction activity.
+* Activity drops significantly after September.
+
+### Business Insights
+
+* Monday marketing campaigns may improve conversions.
+* Summer periods are critical for sales planning and inventory management.
+
+---
+
+## 9️⃣ Delivery Performance Analysis
+
+### Observations
+
+* August 2016 recorded approximately **36,000 successful deliveries**.
+* Delivery records after September become unreliable due to missing data.
+
+### Business Insights
+
+* Q4 logistics analysis cannot be trusted without complete delivery records.
+* Missing delivery data must be addressed before operational forecasting.
+
+---
+
+# 📊 Statistical & Correlation Analysis
+
+The project also includes:
+
+* Correlation heatmaps
+* Distribution analysis
+* Return-rate relationships
+* Price vs return comparisons
+* Temporal trend analysis
+* Frequency distribution studies
+
+These analyses help identify hidden relationships and prepare the dataset for predictive modeling.
+
+---
+
+# 🤖 Future Machine Learning Scope
+
+This project creates a strong foundation for advanced analytics and machine learning.
+
+## Planned Extensions
+
+### 1. Return Prediction Model
+
+Build ML models to predict whether an item will be returned.
+
+Possible algorithms:
+
+* Logistic Regression
+* Random Forest
+* XGBoost
+* LightGBM
+
+---
+
+### 2. Customer Segmentation
+
+Perform clustering using:
+
+* K-Means
+* Hierarchical Clustering
+* DBSCAN
+
+To identify:
+
+* high-value customers
+* seasonal buyers
+* frequent returners
+* premium shoppers.
+
+---
+
+### 3. RFM Analysis
+
+Analyze:
+
+* Recency
+* Frequency
+* Monetary Value
+
+To score customer lifetime value.
+
+---
+
+### 4. Recommendation Systems
+
+Future enhancement may include:
+
+* personalized product recommendation engines
+* collaborative filtering
+* content-based recommendation systems.
+
+---
+
+# 📁 Project Structure
+
+```bash
+├── Dataset/                 # Raw dataset (not uploaded)
+├── Notebooks/               # Jupyter notebooks
+├── visuals/                 # EDA visualizations and charts
+├── README.md                # Project documentation
+└── requirements.txt         # Python dependencies
+```
+
+---
+
+# 📷 Visualizations
+
+## 🖼️ Daily Orders with 7-Day Rolling Mean
+
+![Daily Orders](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-1.png)
+
+---
+
+## 🖼️ Item Size Distribution
+
+![Size Distribution](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-4.jpg)
+
+---
+
+## 🖼️ Orders Per State
+
+![Orders Per State](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-2.jpg)
+
+---
+
+## 🖼️ User Count by State
+
+![Users By State](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2c88df290599aead0ef3860a2771cc5e443fa28a/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-8.jpg)
+
+---
+
+## 🖼️ Average Item Price by User Title
+
+![Average Price](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/2218946ac4c37bb88064c7cc936f840bf7bd2cc1/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-7.jpg)
+
+---
+
+## 🖼️ Monthly Registration Comparison (2015 vs 2016)
+
+![Monthly Registrations](https://github.com/alfiya-ansari-175/Data-Science-Portfolio/blob/c95536df476cdd89a17a192c675b5f7bbd786bfc/German%20E-Commerce%20Customer%20Behaviour%20Analysis/visuals/Insights-9.jpg)
+
+---
+
+# 🚀 How to Run the Project
+
+## 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/german-ecommerce-customer-analysis.git
+```
+
+## 2️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## 3️⃣ Run the Notebook
+
+```bash
+jupyter notebook
+```
+
+Open the notebook and run all cells.
+
+---
+
+# 💡 What I Learned From This Project
+
+Working on this project helped me better understand how raw transactional data can reveal real business problems and customer behavior patterns. One of the most interesting findings was discovering how strongly returns impact e-commerce operations and how customer activity changes across regions and seasons.
+
+This project also strengthened my skills in:
+
+* Cleaning and preprocessing messy real-world datasets
+* Detecting anomalies and outliers
+* Building meaningful visualizations
+* Extracting business-focused insights from data
+* Working with time-series and behavioral patterns
+
+---
+
+# 📌 Project Highlights
+
+✅ Large-scale real-world e-commerce dataset
+✅ End-to-end exploratory data analysis
+✅ Advanced business insights
+✅ Time-series and trend analysis
+✅ Return behavior analytics
+✅ Customer and regional analysis
+✅ Visualization-driven storytelling
+✅ Machine learning readiness
+
+---
+
+# 📚 Skills Demonstrated
+
+* Exploratory Data Analysis (EDA)
+* Data Cleaning & Preprocessing
+* Data Visualization
+* Statistical Analysis
+* Business Intelligence
+* Customer Behavior Analytics
+* Time-Series Analysis
+* Feature Engineering
+* Problem Solving
+* Insight Communication
+
+---
+
+# 📄 License
+
+This project is intended for educational and analytical purposes only.
+
+---
+
+# 👩‍💻 Author
+
+**Alfiya Ansari**
+
+If you found this project useful, feel free to ⭐ the repository.
